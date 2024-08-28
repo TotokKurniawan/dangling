@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Dangling || Home</title>
+    <title>Index - Appland Bootstrap Template</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="/landing_assets/img/favicon.png" rel="icon">
-    <link href="/landing_assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('landingpage/assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('landingpage/assets/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -20,17 +20,18 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="/landing_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/landing_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/landing_assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/landing_assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="/landing_assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ asset('landingpage/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('landingpage/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('landingpage/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('landingpage/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('landingpage/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="/landing_assets/css/main.css" rel="stylesheet">
+    <link href="{{ asset('landingpage/assets/css/main.css') }}" rel="stylesheet">
+
     <!-- =======================================================
-  * Template Name: Bootslander
-  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Template Name: Appland
+  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
   * Updated: Aug 07 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
@@ -42,31 +43,31 @@
     @include('landingpage.layout.header')
 
     <main class="main">
-
         @yield('content')
+        <!-- Hero Section -->
+
 
     </main>
 
-    @include('landingpage.layout.footer')
+    <footer id="footer" class="footer">
+        @include('landingpage.layout.footer')
+    </footer>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+
 
     <!-- Vendor JS Files -->
-    <!-- Vendor JS Files -->
-    <script src="/landing_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/landing_assets/vendor/php-email-form/validate.js"></script>
-    <script src="/landing_assets/vendor/aos/aos.js"></script>
-    <script src="/landing_assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="/landing_assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/landing_assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('landingpage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('landingpage/assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('landingpage/assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('landingpage/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('landingpage/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
 
     <!-- Main JS File -->
-    <script src="/landing_assets/js/main.js"></script>
+    <script src="{{ asset('landingpage/assets/js/main.js') }}"></script>
 
 </body>
 
