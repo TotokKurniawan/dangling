@@ -28,6 +28,7 @@ Route::get('/Home', [AdminController::class, 'dashboard'])->name('Dashboard');
 Route::get('/Pedagang', [AdminController::class, 'pedagang'])->name('Pedagang');
 Route::get('/Keluhan', [AdminController::class, 'keluhan'])->name('Keluhan');
 
+
 Route::get('/Mitra', [MitraController::class, 'mitra'])->name('Mitra');
 Route::get('/Tambah-Mitra', [MitraController::class, 'tambahmitra'])->name('Tambah-Pesanan');
 Route::delete('/mitras/{id}', [MitraController::class, 'destroy'])->name('mitras.destroy');
