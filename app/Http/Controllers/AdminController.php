@@ -14,10 +14,8 @@ class AdminController extends Controller
     {
         return view('admin.pedagang');
     }
-    public function mitra()
-    {
-        return view('admin.mitra');
-    }
+
+    
     public function keluhan()
     {
         return view('admin.keluhan');
