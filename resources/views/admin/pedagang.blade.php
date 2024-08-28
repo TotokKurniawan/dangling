@@ -44,12 +44,6 @@
                                             <span class="badge badge-sm bg-gradient-success">Online</span>
                                         </td>
                                         <td class="align-middle">
-                                            <!-- Edit Button -->
-                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                data-toggle="tooltip" data-original-title="Edit user">
-                                                <i class="bi bi-pencil"></i> Edit
-                                            </a>
-                                            <span> | </span>
                                             <!-- Hapus Button -->
                                             <a href="javascript:;" class="text-danger font-weight-bold text-xs ml-2"
                                                 data-toggle="tooltip" data-original-title="Hapus user"

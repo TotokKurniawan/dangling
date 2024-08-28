@@ -9,12 +9,12 @@
                 <!-- Breadcrumb untuk halaman aktif -->
                 <li class="breadcrumb-item text-sm text-white {{ Route::is('dashboard') ? 'active' : '' }}"
                     aria-current="page">
-                    {{ Route::is('Dashboard') ? 'Dashboard' : (Route::is('Pedagang') ? 'Pedagang' : (Route::is('Profile') ? 'Profile' : (Route::is('Mitra') ? 'Mitra' : (Route::is('Keluhan') ? 'Keluhan' : (Route::is('Pendapatan') ? 'Pendapatan' : ''))))) }}
+                    {{ Route::is('Dashboard') ? 'Dashboard' : (Route::is('Pedagang') ? 'Pedagang' : (Route::is('Profile') ? 'Profile' : (Route::is('Tambah-Pesanan') ? 'Tambah-Pesanan' : (Route::is('Mitra') ? 'Mitra' : (Route::is('Keluhan') ? 'Keluhan' : (Route::is('Pendapatan') ? 'Pendapatan' : '')))))) }}
                 </li>
             </ol>
             <!-- Judul untuk halaman aktif -->
             <h6 class="font-weight-bolder text-white mb-0">
-                {{ Route::is('Dashboard') ? 'Dashboard' : (Route::is('Pedagang') ? 'Pedagang' : (Route::is('Keluhan') ? 'Keluhan' : (Route::is('Profile') ? 'Profile' : (Route::is('Mitra') ? 'Mitra' : (Route::is('Pendapatan') ? 'Pendapatan' : ''))))) }}
+                {{ Route::is('Dashboard') ? 'Dashboard' : (Route::is('Pedagang') ? 'Pedagang' : (Route::is('Keluhan') ? 'Keluhan' : (Route::is('Tambah-Pesanan') ? 'Tambah-Pesanan' : (Route::is('Profile') ? 'Profile' : (Route::is('Mitra') ? 'Mitra' : (Route::is('Pendapatan') ? 'Pendapatan' : '')))))) }}
             </h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
