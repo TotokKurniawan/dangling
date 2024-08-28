@@ -1,4 +1,4 @@
-@include('landingpage.home')
+@extends('landingpage.layout.app')
 @section('content')
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">

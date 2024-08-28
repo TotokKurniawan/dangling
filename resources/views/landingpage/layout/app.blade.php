@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="{{ asset('assetshome/img/favicon.png') }}" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/landing_assets/img/favicon.png" rel="icon">
+    <link href="/landing_assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -20,15 +20,14 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('assetshome/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assetshome/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('assetshome/vendor/aos/aos.css" rel="stylesheet') }}">
-    <link href="{{ asset('assetshome/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assetshome/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="/landing_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/landing_assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/landing_assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/landing_assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/landing_assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="{{ asset('assetshome/css/main.css') }}" rel="stylesheet">
-
+    <link href="/landing_assets/css/main.css" rel="stylesheet">
     <!-- =======================================================
   * Template Name: Bootslander
   * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
@@ -58,15 +57,16 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="{{ asset('assetshome/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assetshome/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('assetshome/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('assetshome/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('assetshome/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script src="{{ asset('assetshome/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <!-- Vendor JS Files -->
+    <script src="/landing_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/landing_assets/vendor/php-email-form/validate.js"></script>
+    <script src="/landing_assets/vendor/aos/aos.js"></script>
+    <script src="/landing_assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/landing_assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/landing_assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Main JS File -->
-    <script src="{{ asset('assetshome/js/main.js') }}"></script>
+    <script src="/landing_assets/js/main.js"></script>
 
 </body>
 

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'home'])->name('home');
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/fitur', [LandingController::class, 'fitur'])->name('fitur');
+
+Route::get('/login', [LoginController::class, 'Login'])->name('Login');
+Route::get('/Forgot', [ForgotController::class, 'Forgot'])->name('Forgot');
+
+Route::get('/Home', [AdminController::class, 'dashboard'])->name('Dashboard');
+Route::get('/Pedagang', [AdminController::class, 'pedagang'])->name('Pedagang');
+Route::get('/Keluhan', [AdminController::class, 'keluhan'])->name('Keluhan');
+Route::get('/Mitra', [AdminController::class, 'mitra'])->name('Mitra');
+Route::get('/Pendapatan', [AdminController::class, 'pendapatan'])->name('Pendapatan');
+Route::get('/Profileadmin', [AdminController::class, 'profile'])->name('Profile');
