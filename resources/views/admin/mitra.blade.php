@@ -42,6 +42,7 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">{{ $mitra->nama }}</h6>
+                                                        <p class="mb-0 text-sm">{{ $mitra->email }}</p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -50,8 +51,10 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 <!-- Tombol Edit -->
+                                                <!-- Tombol Edit -->
                                                 <a href="#" class="text-secondary font-weight-bold text-xs"
-                                                    data-bs-toggle="modal" data-bs-target="#editpengeluaranmodal">
+                                                    data-bs-toggle="modal" data-bs-target="#editMitraModal"
+                                                    onclick="setEditModalData('{{ $mitra->id }}', '{{ $mitra->nama }}', '{{ $mitra->perusahaan }}')">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
 
@@ -83,4 +86,5 @@
 
         @include('admin.layout.footer')
     </div>
+    @include('admin.modal.modal-mitra')
 @endsection

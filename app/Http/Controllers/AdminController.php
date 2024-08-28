@@ -14,6 +14,7 @@ class AdminController extends Controller
     {
         return view('admin.pedagang');
     }
+
     
     public function keluhan()
     {
