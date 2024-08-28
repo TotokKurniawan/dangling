@@ -43,8 +43,6 @@
   <main class="main">
     @yield('content')
     <!-- Hero Section -->
-    
-
   </main>
 
   <footer id="footer" class="footer">
@@ -52,10 +50,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('landingpage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

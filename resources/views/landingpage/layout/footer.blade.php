@@ -1,4 +1,6 @@
-<div class="footer-newsletter">
+<footer id="footer" class="footer">
+
+  <div class="footer-newsletter">
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col-lg-6">
@@ -73,3 +75,5 @@
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </div>
+
+</footer>
