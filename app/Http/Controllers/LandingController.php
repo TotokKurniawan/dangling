@@ -10,4 +10,8 @@ class LandingController extends Controller
     {
         return view('landingpage.home');
     }
+    public function fitur()
+    {
+        return view('landingpage.fitur');
+    }
 }

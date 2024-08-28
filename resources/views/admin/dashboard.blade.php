@@ -1,4 +1,4 @@
-@include('admin.layout.app')
+@extends('admin.layout.app')
 @section('content')
     <div class="container-fluid py-4">
         <div class="row">
@@ -125,7 +125,7 @@
                     <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
                         <div class="carousel-inner border-radius-lg h-100">
                             <div class="carousel-item h-100 active"
-                                style="background-image: url('../assets/img/carousel-1.jpg');
+                                style="background-image: url('{{ asset('assetsadmin/img/carousel-1.jpg') }}');
 background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
