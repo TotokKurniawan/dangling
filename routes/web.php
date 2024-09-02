@@ -5,6 +5,7 @@ use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\OperatorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,10 +32,17 @@ Route::get('/Keluhan', [AdminController::class, 'keluhan'])->name('Keluhan');
 
 Route::get('/Mitra', [MitraController::class, 'mitra'])->name('Mitra');
 Route::get('/Tambah-Mitra', [MitraController::class, 'tambahmitra'])->name('Tambah-Pesanan');
-Route::delete('/mitras/{id}', [MitraController::class, 'destroy'])->name('mitras.destroy');
-
-
 Route::post('/tambah', [MitraController::class, 'store'])->name('tambahan');;
+Route::delete('/mitras/{id}', [MitraController::class, 'destroy'])->name('mitras.destroy');
 
 Route::get('/Pendapatan', [AdminController::class, 'pendapatan'])->name('Pendapatan');
 Route::get('/Profileadmin', [AdminController::class, 'profile'])->name('Profile');
+
+Route::get('/DataAdmin', [AdminController::class, 'dataadmin'])->name('DataAdmin');
+Route::get('/Tambahadmin', [AdminController::class, 'tambahadmin'])->name('Tambahadmin');
+
+
+Route::get('/DashboardOperator', [OperatorController::class, 'DashboardOperator'])->name('DashboardOperator');
+Route::get('/PedagangOperator', [OperatorController::class, 'PedagangOperator'])->name('PedagangOperator');
+Route::get('/KeluhanOperator', [OperatorController::class, 'KeluhanOperator'])->name('KeluhanOperator');
+Route::get('/ProfileOperator', [OperatorController::class, 'ProfileOperator'])->name('ProfileOperator');

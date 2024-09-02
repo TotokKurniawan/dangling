@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Keluhan extends Model
 {
     use HasFactory;
-    protected $table = 'keluhans'; // Nama tabel dalam database
-
-    // Tentukan kolom-kolom yang dapat diisi secara massal
+    protected $table = 'keluhans';
     protected $fillable = [
         'deksripsi',
         'rating',
+        'id pembeli',
+        'id pedagang',
     ];
 }

@@ -39,7 +39,7 @@
                 <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
                 <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
                 <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="#">Admin</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ route('Login') }}">Admin</a></li>
             </ul>
         </div>
 
