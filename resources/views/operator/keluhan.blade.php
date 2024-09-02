@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('operator.layout.app')
 @section('content')
     <div class="container-fluid py-4">
         <div class="row">
@@ -21,7 +21,7 @@
                                             Pedagang</th>
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Deskripsi</th>
+                                            Deksripsi</th>
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                             Rating</th>
@@ -65,7 +65,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 

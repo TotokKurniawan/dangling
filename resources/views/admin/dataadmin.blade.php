@@ -5,7 +5,11 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                        <h6>Table Pedagang</h6>
+                        <h6>Data Admin</h6>
+                        <a href="{{ route('Tambahadmin') }}" class="btn btn-primary btn-sm" data-toggle="tooltip"
+                            data-original-title="Tambah data">
+                            <i class="fas fa-plus"></i> Tambah
+                        </a>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -14,11 +18,12 @@
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Nama</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            kategori Jual</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Email</th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Status</th>
+                                            Password</th>
                                         <th class="text-secondary opacity-7">Action</th>
                                     </tr>
                                 </thead>
@@ -45,12 +50,11 @@
                                         </td>
                                         <td class="align-middle">
                                             <!-- Hapus Button -->
-                                            <label class="switch">
-                                                <input type="checkbox" onclick="confirmDelete(this)">
-                                                <span class="slider round"></span>
-                                            </label>
-
-
+                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs ml-2"
+                                                data-toggle="tooltip" data-original-title="Hapus user"
+                                                onclick="confirmDelete()">
+                                                <i class="bi bi-trash"></i> Hapus
+                                            </a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -65,59 +69,3 @@
     @include('admin.layout.footer')
     </div>
 @endsection
-
-
-<style>
-    /* Styling untuk switcher */
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 50px;
-        height: 25px;
-    }
-
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 4px;
-        bottom: 4px;
-        background-color: red;
-        transition: .4s;
-    }
-
-    input:checked+.slider {
-        background-color: #2196F3;
-    }
-
-    input:checked+.slider:before {
-        transform: translateX(26px);
-    }
-
-    /* Styling untuk switcher berbentuk bulat */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-</style>
