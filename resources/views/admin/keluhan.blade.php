@@ -21,7 +21,7 @@
                                             Pedagang</th>
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Deksripsi</th>
+                                            Deskripsi</th>
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                             Rating</th>
@@ -65,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
