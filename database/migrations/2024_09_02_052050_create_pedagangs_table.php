@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Validation\Rules\Unique;
 
 return new class extends Migration
 {
@@ -12,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mitras', function (Blueprint $table) {
+        Schema::create('pedagangs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('perusahaan');
+            $table->char('telfon');
+            $table->string('alamat');
+            $table->string('foto');
+            $table->enum('status', ['online', 'offline']);
+            $table->unsignedBigInteger('id user');
+            $table->foreign('id user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mitras');
+        Schema::dropIfExists('pedagangs');
     }
 };

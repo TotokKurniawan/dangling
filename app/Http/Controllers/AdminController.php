@@ -14,8 +14,14 @@ class AdminController extends Controller
     {
         return view('admin.pedagang');
     }
-
-    
+    public function dataadmin()
+    {
+        return view('admin.dataadmin');
+    }
+    public function tambahadmin()
+    {
+        return view('admin.form.tambahadmin');
+    }
     public function keluhan()
     {
         return view('admin.keluhan');

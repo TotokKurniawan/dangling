@@ -8,12 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Mitra extends Model
 {
     use HasFactory;
-    protected $table = 'mitras'; // Nama tabel dalam database
 
-    // Tentukan kolom-kolom yang dapat diisi secara massal
+    protected $table = 'mitras';
     protected $fillable = [
         'nama',
-        'email',
         'perusahaan'
     ];
 }
