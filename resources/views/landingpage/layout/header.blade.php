@@ -9,11 +9,12 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="{{ route('home') }}" class="active">Home</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                
+                <li><a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
+                <li><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
+                <li><a class="nav-link {{ request()->routeIs('features') ? 'active' : '' }}" href="{{ route('features') }}">Features</a></li>
+                <li><a class="nav-link {{ request()->routeIs('galery') ? 'active' : '' }}" href="{{ route('galery') }}">Gallery</a></li>
+                <li><a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

@@ -14,8 +14,16 @@ class LandingController extends Controller
     {
         return view('landingpage.about');
     }
-    public function fitur()
+    public function features()
     {
-        return view('landingpage.fitur');
+        return view('landingpage.features');
+    }
+    public function contact()
+    {
+        return view('landingpage.contact');
+    }
+    public function galery()
+    {
+        return view('landingpage.galery');
     }
 }
