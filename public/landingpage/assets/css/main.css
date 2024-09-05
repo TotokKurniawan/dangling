@@ -445,7 +445,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
   font-size: 14px;
   position: relative;
 }
@@ -825,6 +825,26 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about .container {
+  display: flex;
+  justify-content: center; /* Mengatur elemen di dalam container agar berada di tengah */
+  flex-direction: column; /* Agar teks tetap vertikal */
+  align-items: center; /* Mengatur alignment secara horizontal */
+}
+.about .section-title h2 {
+  text-align: center; /* Menambahkan centering untuk teks */
+  font-size: 32px; /* Ukuran font untuk judul, bisa disesuaikan */
+  font-weight: bold; /* Menegaskan huruf tebal */
+}
+
+.about .d-flex {
+  flex: 1;
+}
+
+.about .row.gy-4 {
+  flex: 0 0 45%; /* Agar kolom kanan lebih kecil dari kolom kiri */
+}
+
 .about ul {
   list-style: none;
   padding: 0;
@@ -872,6 +892,31 @@ section,
   transform: translate(5px, 0);
 }
 
+.about .icon-box {
+  display: flex;
+}
+
+.about .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.about .icon-box i {
+  font-size: 44px;
+  line-height: 44px;
+  color: var(--accent-color);
+  margin-right: 15px;
+}
+
+.about .icon-box p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 0;
+}
+
+
+
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
@@ -897,6 +942,47 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-bottom: 0;
 }
+/* Info item styles */
+.features .info-item {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 30px;
+  border: 1px solid #000; /* Menambahkan border persegi */
+  border-radius: 5px; /* Agar sedikit membulat */
+  box-sizing: border-box; /* Memastikan border dihitung dalam ukuran elemen */
+  transition: transform 0.3s ease; /* Animasi transformasi */
+}
+
+.features .info-item:hover {
+  transform: scale(1.05); /* Efek hover */
+}
+
+.features .info-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.features .info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.features .info-item p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .col-md-6 {
+    width: 100%; /* Pada layar lebih kecil, setiap kolom menjadi penuh */
+    margin-bottom: 20px; /* Tambahkan jarak antara elemen */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Feature Details Section
