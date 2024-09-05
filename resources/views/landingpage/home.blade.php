@@ -48,7 +48,7 @@
 
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
           <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          <a href="{{ route('about') }}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
         </div>
 
       </div>
@@ -192,7 +192,7 @@
         </div>
       </div><!-- Features Item -->
 
-      <div class="row gy-4 align-items-center features-item">
+      {{-- <div class="row gy-4 align-items-center features-item">
         <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
           <img src="{{ asset('landingpage/assets/img/features-4.png')}}" class="img-fluid" alt="">
         </div>
@@ -208,7 +208,7 @@
             culpa qui officia deserunt mollit anim id est laborum
           </p>
         </div>
-      </div><!-- Features Item -->
+      </div><!-- Features Item --> --}}
 
     </div>
 
