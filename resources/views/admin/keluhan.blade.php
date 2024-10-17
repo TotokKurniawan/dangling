@@ -21,7 +21,7 @@
                                         <th class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
                                             Deskripsi</th>
                                         <th
-                                            class="text-uppercase text-secondary text-sm font-weight-bolder text-center opacity-7 ps-2">
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                                             Rating</th>
                                     </tr>
                                 </thead>
@@ -72,6 +72,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
