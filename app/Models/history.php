@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Keluhan extends Model
+class history extends Model
 {
     use HasFactory;
-
-    protected $table = 'keluhans';
+    protected $table = 'historys';
     protected $fillable = [
-        'deskripsi', // typo 'deksripsi' diperbaiki menjadi 'deskripsi'
-        'rating',
-        'id pembeli', // nama kolom diubah untuk mengikuti konvensi penamaan
-        'id pedagang', // sama seperti di atas
+        'history',
+        'bentuk_pembayaran',
+        'koordinat pembeli', // nama kolom diubah untuk mengikuti konvensi penamaan
+        'koordinat pedagang', // sama seperti di atas
     ];
 
     // Relasi ke tabel pembelis

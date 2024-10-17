@@ -34,11 +34,16 @@
                 </li>
                 <!-- Menu Logout -->
                 <li class="nav-item d-flex align-items-center ms-3">
-                    <a href="javascript:;" class="nav-link text-white font-weight-bold px-2">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf <!-- Laravel CSRF token -->
+                    </form>
+                    <a href="javascript:void(0);" class="nav-link text-white font-weight-bold px-2"
+                        onclick="showLogoutConfirmation();">
                         <i class="fa fa-sign-out-alt me-1"></i> <!-- Ikon Logout -->
                         <span class="d-sm-inline d-none">Keluar</span>
                     </a>
                 </li>
+
             </ul>
 
         </div>

@@ -8,14 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Pembeli extends Model
 {
     use HasFactory;
+
     protected $table = 'pembelis'; // Nama tabel dalam database
 
-    // Tentukan kolom-kolom yang dapat diisi secara massal
+    // Kolom yang bisa diisi secara massal
     protected $fillable = [
         'nama',
         'telfon',
         'alamat',
         'foto',
-        'id user'
+        'id user', // Menggunakan snake_case untuk foreign key
     ];
+
+    // Relasi ke model User, jika diperlukan
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id user');
+    }
 }

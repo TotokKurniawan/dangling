@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Keluhan;
+use App\Models\Pedagang;
 use Illuminate\Http\Request;
 
 class OperatorController extends Controller
@@ -12,14 +14,14 @@ class OperatorController extends Controller
     }
     public function PedagangOperator()
     {
-        return view('operator.pedagang');
+
+        $pedagangs = Pedagang::paginate(10);
+        return view('operator.pedagang', compact('pedagangs'));
     }
     public function KeluhanOperator()
     {
-        return view('operator.keluhan');
+        $keluhans = Keluhan::with(['pembeli', 'pedagang'])->paginate(10);
+        return view('operator.keluhan', compact('keluhans'));
     }
-    public function ProfileOperator()
-    {
-        return view('operator.profile');
-    }
+    
 }
