@@ -13,6 +13,7 @@ class Produk extends Model
         'nama_produk',
         'harga_produk',
         'kategori_produk',
-        'id pedagang',
+        'foto_produk',
+        'id_pedagang',
     ];
 }

@@ -16,9 +16,12 @@ return new class extends Migration
             $table->string('nama');
             $table->char('telfon');
             $table->string('alamat');
+            // $table->binary('foto');
             $table->string('foto');
-            $table->unsignedBigInteger('id user');
-            $table->foreign('id user')->references('id')->on('users')->onDelete('cascade');
+            $table->decimal('latitude')->nullable();
+            $table->decimal('longtitude')->nullable();
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

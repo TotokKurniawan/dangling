@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                        <h6>Data Admin</h6>
+                        <h6>Data Operator</h6>
                         <a href="{{ route('Tambahadmin') }}" class="btn btn-primary btn-sm" data-toggle="tooltip"
                             data-original-title="Tambah data">
                             <i class="fas fa-plus"></i> Tambah
@@ -15,50 +15,98 @@
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Nama</th>
-                                        <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Email</th>
+                                    <tr class="text-center">
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role
+                                        </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Password</th>
-                                        <th class="text-secondary opacity-7">Action</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs opacity-7">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3"
-                                                        alt="user1">
+                                    @foreach ($users as $index => $user)
+                                        <tr class="text-center">
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $index + 1 }}</p>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <!-- Set ukuran dengan max-width dan max-height -->
+                                                        <img src="{{ asset('storage/foto_mitra/' . basename($user->foto)) }}"
+                                                            alt="Foto Mitra"
+                                                            style="max-width: 80px; max-height: 80px; object-fit: cover; ">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{ $user->nama }}</h6>
+                                                        <p class="text-xs text-secondary mb-0">{{ $user->email }}</p>
+                                                    </div>
                                                 </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">John Michael</h6>
-                                                    <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                            <p class="text-xs text-secondary mb-0">Organization</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="badge badge-sm bg-gradient-success">Online</span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <!-- Hapus Button -->
-                                            <a href="javascript:;" class="text-danger font-weight-bold text-xs ml-2"
-                                                data-toggle="tooltip" data-original-title="Hapus user"
-                                                onclick="confirmDelete()">
-                                                <i class="bi bi-trash"></i> Hapus
-                                            </a>
-                                        </td>
-                                    </tr>
+                                            </td>
+
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $user->role }}</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $user->password }}</p>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="#" class="text-secondary font-weight-bold text-xs"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#editOperatorModal-{{ $user->id }}">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
+                                                <span class="mx-2">|</span>
+
+                                                <a href="#" class="text-danger font-weight-bold text-xs"
+                                                    onclick="confirmDelete('{{ $user->id }}')">
+                                                    <i class="fas fa-trash"></i> Hapus
+                                                </a>
+
+                                                <form id="delete-form-{{ $user->id }}"
+                                                    action="{{ route('user.destroy', $user->id) }}" method="POST"
+                                                    style="display: none;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+
+                                            </td>
+                                        </tr>
+                                        @include('admin.modal.modal-operator')
+                                    @endforeach
                                 </tbody>
                             </table>
+
+                            <div class="d-flex justify-content-center mt-4 text-black">
+                                <ul class="pagination">
+                                    {{-- Previous Page Link --}}
+                                    <li class="page-item {{ $users->onFirstPage() ? 'disabled' : '' }}">
+                                        <a class="page-link" href="{{ $users->previousPageUrl() }}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+
+                                    {{-- Pagination Elements --}}
+                                    @foreach ($users->links()->elements[0] as $page => $url)
+                                        <li class="page-item {{ $page == $users->currentPage() ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                        </li>
+                                    @endforeach
+
+                                    {{-- Next Page Link --}}
+                                    <li class="page-item {{ $users->hasMorePages() ? '' : 'disabled' }}">
+                                        <a class="page-link" href="{{ $users->nextPageUrl() }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </div>

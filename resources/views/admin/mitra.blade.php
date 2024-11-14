@@ -42,19 +42,18 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">{{ $mitra->nama }}</h6>
-                                                        <p class="mb-0 text-sm">{{ $mitra->email }}</p>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="text-xs">{{ $mitra->perusahaan }}</span>
+                                                <span class="text-xs">{{ $mitra->Perusahaan }}</span>
                                             </td>
                                             <td class="align-middle text-center">
                                                 <!-- Tombol Edit -->
                                                 <!-- Tombol Edit -->
                                                 <a href="#" class="text-secondary font-weight-bold text-xs"
-                                                    data-bs-toggle="modal" data-bs-target="#editMitraModal"
-                                                    onclick="setEditModalData('{{ $mitra->id }}', '{{ $mitra->nama }}', '{{ $mitra->perusahaan }}')">
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#editMitraModal-{{ $mitra->id }}">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
 
@@ -62,7 +61,7 @@
 
                                                 <!-- Tombol Hapus -->
                                                 <a href="#" class="text-danger font-weight-bold text-xs"
-                                                    onclick="event.preventDefault(); if(confirm('Yakin ingin menghapus mitra ini?')) document.getElementById('delete-form-{{ $mitra->id }}').submit();">
+                                                    onclick="confirmDelete('{{ $mitra->id }}')">
                                                     <i class="fas fa-trash"></i> Hapus
                                                 </a>
 
@@ -78,6 +77,33 @@
                                     @endforeach
                                 </tbody>
                             </table>
+
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-center mt-4 text-black">
+                                <ul class="pagination">
+                                    {{-- Previous Page Link --}}
+                                    <li class="page-item {{ $mitras->onFirstPage() ? 'disabled' : '' }}">
+                                        <a class="page-link" href="{{ $mitras->previousPageUrl() }}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+
+                                    {{-- Pagination Elements --}}
+                                    @foreach ($mitras->links()->elements[0] as $page => $url)
+                                        <li class="page-item {{ $page == $mitras->currentPage() ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                        </li>
+                                    @endforeach
+
+                                    {{-- Next Page Link --}}
+                                    <li class="page-item {{ $mitras->hasMorePages() ? '' : 'disabled' }}">
+                                        <a class="page-link" href="{{ $mitras->nextPageUrl() }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </div>
