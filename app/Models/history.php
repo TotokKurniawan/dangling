@@ -10,10 +10,8 @@ class history extends Model
     use HasFactory;
     protected $table = 'historys';
     protected $fillable = [
-        'history',
+        'status',
         'bentuk_pembayaran',
-        'koordinat pembeli', // nama kolom diubah untuk mengikuti konvensi penamaan
-        'koordinat pedagang', // sama seperti di atas
     ];
 
     // Relasi ke tabel pembelis

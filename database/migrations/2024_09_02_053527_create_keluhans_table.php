@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('deskripsi');
             $table->integer('rating');
-            $table->unsignedBigInteger('id pembeli'); // Ganti spasi dengan underscore
-            $table->unsignedBigInteger('id pedagang'); // Ganti spasi dengan underscore
+            $table->unsignedBigInteger('id_pembeli'); // Ganti spasi dengan underscore
+            $table->unsignedBigInteger('id_pedagang'); // Ganti spasi dengan underscore
             $table->timestamps();
 
             // Menambahkan foreign key constraints
-            $table->foreign('id pembeli')->references('id')->on('pembelis')->onDelete('cascade');
-            $table->foreign('id pedagang')->references('id')->on('pedagangs')->onDelete('cascade');
+            $table->foreign('id_pembeli')->references('id')->on('pembelis')->onDelete('cascade');
+            $table->foreign('id_pedagang')->references('id')->on('pedagangs')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,7 @@
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
-                                    <tr class="text-center">
+                                    <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama
@@ -42,16 +42,13 @@
                                                             alt="Foto Mitra"
                                                             style="max-width: 80px; max-height: 80px; object-fit: cover; ">
                                                     </div>
-                                                    <div class="d-flex flex-column justify-content-center">
+                                                    <div class="d-flex flex-column " style="margin-left: 20px;">
                                                         <h6 class="mb-0 text-sm">{{ $user->nama }}</h6>
                                                         <p class="text-xs text-secondary mb-0">{{ $user->email }}</p>
                                                     </div>
                                                 </div>
                                             </td>
 
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{ $user->role }}</p>
-                                            </td>
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">{{ $user->password }}</p>
                                             </td>

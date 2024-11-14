@@ -14,8 +14,8 @@ class KeluhanController extends Controller
         Keluhan::create(attributes: [
             'deskripsi' => $request->deskripsi,  // Ini adalah deskripsi keluhan
             'rating' => $request->rating,       // Ini adalah rating dari form
-            'id pembeli' => $request->nama,     // Nama dari pembeli (id)
-            'id pedagang' => $request->pedagang // Nama pedagang (id)
+            'id_pembeli' => $request->nama,     // Nama dari pembeli (id)
+            'id_pedagang' => $request->pedagang // Nama pedagang (id)
         ]);
         session()->flash('success', 'Data berhasil Disimpan');
 

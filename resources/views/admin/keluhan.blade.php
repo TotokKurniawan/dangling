@@ -32,7 +32,7 @@
                                             <td class="text-sm font-weight-bold mb-0">{{ $keluhan->pembeli->nama ?? 'N/A' }}
                                             </td> <!-- Nama pembeli -->
                                             <td class="text-sm font-weight-bold mb-0">
-                                                {{ $keluhan->pedagang->nama ?? 'N/A' }}</td> <!-- Nama pedagang -->
+                                                {{ $keluhan->pedagang->namaToko }}</td> <!-- Nama pedagang -->
                                             <td class="text-sm mb-0">{{ $keluhan->deskripsi }}</td>
                                             <td class="align-middle text-center text-sm font-weight-bold">
                                                 {{ $keluhan->rating }}</td>

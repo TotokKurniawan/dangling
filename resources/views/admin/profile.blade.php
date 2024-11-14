@@ -72,7 +72,7 @@
                         <div class="col-4 col-lg-4 order-lg-2">
                             <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0 text-center">
                                 <a href="javascript:;">
-                                    <img src="{{ asset('storage/foto_mitra/' . basename($user->foto)) }}"
+                                    <img src="{{ Storage::url($user->foto) }}"
                                         class="rounded-circle img-fluid border border-9 border-white" alt="User Foto">
                                 </a>
                             </div>

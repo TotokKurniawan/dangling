@@ -19,12 +19,12 @@ class Keluhan extends Model
     // Relasi ke tabel pembelis
     public function pembeli()
     {
-        return $this->belongsTo(Pembeli::class, 'id pembeli');
+        return $this->belongsTo(Pembeli::class, 'id_pembeli');
     }
 
     // Relasi ke tabel pedagangs
     public function pedagang()
     {
-        return $this->belongsTo(Pedagang::class, 'id pedagang');
+        return $this->belongsTo(Pedagang::class, 'id_pedagang');
     }
 }

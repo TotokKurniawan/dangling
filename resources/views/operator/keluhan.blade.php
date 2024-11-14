@@ -29,15 +29,19 @@
                                     @foreach ($keluhans as $keluhan)
                                         <tr>
                                             <td class="text-sm font-weight-bold mb-0">{{ $loop->iteration }}</td>
-                                            <td class="text-sm font-weight-bold mb-0">{{ $keluhan->pembeli->nama ?? 'N/A' }}
-                                            </td> <!-- Nama pembeli -->
                                             <td class="text-sm font-weight-bold mb-0">
-                                                {{ $keluhan->pedagang->nama ?? 'N/A' }}</td> <!-- Nama pedagang -->
+                                                {{ $keluhan->pembeli->nama ?? 'N/A' }} <!-- Nama pembeli -->
+                                            </td>
+                                            <td class="text-sm font-weight-bold mb-0">
+                                                {{ $keluhan->pedagang->namaToko ?? 'N/A' }} <!-- Nama pedagang -->
+                                            </td>
                                             <td class="text-sm mb-0">{{ $keluhan->deskripsi }}</td>
                                             <td class="align-middle text-center text-sm font-weight-bold">
-                                                {{ $keluhan->rating }}</td>
+                                                {{ $keluhan->rating }}
+                                            </td>
                                         </tr>
                                     @endforeach
+
                                 </tbody>
                             </table>
 

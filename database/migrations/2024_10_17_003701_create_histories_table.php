@@ -13,20 +13,17 @@ return new class extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->varchar('history');
-            $table->varchar('bentuk_pembayaran');
-            $table->point('koordinat_pembeli');
-            $table->point('koordinat_pedagang');
-            $table->unsignedBigInteger('id pembeli'); // Ganti spasi dengan underscore
-            $table->unsignedBigInteger('id pedagang'); // Ganti spasi dengan underscore
+            $table->enum('status', ['menunggu', 'diterima', 'ditolak']);
+            $table->string('bentuk_pembayaran'); // Menggunakan 'string' untuk teks
+            $table->unsignedBigInteger('id_pembeli');
+            $table->unsignedBigInteger('id_pedagang');
             $table->timestamps();
 
             // Menambahkan foreign key constraints
-            $table->foreign('id pembeli')->references('id')->on('pembelis')->onDelete('cascade');
-            $table->foreign('id pedagang')->references('id')->on('pedagangs')->onDelete('cascade');
+            $table->foreign('id_pembeli')->references('id')->on('pembelis')->onDelete('cascade');
+            $table->foreign('id_pedagang')->references('id')->on('pedagangs')->onDelete('cascade');
         });
     }
-
     /**
      * Reverse the migrations.
      */
@@ -34,8 +31,8 @@ return new class extends Migration
     {
         Schema::table(table: 'histories', callback: function (Blueprint $table) {
             // Menghapus foreign key constraints sebelum menghapus tabel
-            $table->dropForeign(['id pembeli']);
-            $table->dropForeign(['id pedagang']);
+            $table->dropForeign(['id_pembeli']);
+            $table->dropForeign(['id_pedagang']);
         });
         Schema::dropIfExists(table: 'histories');
     }

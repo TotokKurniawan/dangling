@@ -35,10 +35,9 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/Forgot', [ForgotController::class, 'Forgot'])->name('Forgot');
 
 Route::get('/Home', [AdminController::class, 'dashboard'])->name('Dashboard');
+
 Route::get('/Pedagang', [AdminController::class, 'pedagang'])->name('Pedagang');
-
 Route::post('/update-status', action: [PedagangController::class, 'updateStatus'])->name('update.status');
-
 Route::get('/Keluhan', [AdminController::class, 'keluhan'])->name('Keluhan');
 
 
