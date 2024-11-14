@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('nama_produk');
             $table->integer('harga_produk');
-            $table->enum('kategori_produk', ['bengkel', 'bakso']); // Kolom enum untuk role
-            $table->unsignedBigInteger('id pedagang');
-
+            $table->enum('kategori_produk', ['makanan ringan', 'makanan berat','jasa']);
+            $table->string(column: 'foto');
+            $table->unsignedBigInteger('id_pedagang');
             $table->timestamps();
-            $table->foreign('id pedagang')->references('id')->on('pedagangs')->onDelete('cascade');
+            $table->foreign('id_pedagang')->references('id')->on('pedagangs')->onDelete('cascade');
         });
     }
 

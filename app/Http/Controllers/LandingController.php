@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pedagang;
+use App\Models\Pembeli;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
     public function home()
     {
-        return view('landingpage.home');
-    }
-    public function about()
-    {
-        return view('landingpage.about');
-    }
-    public function features()
-    {
-        return view('landingpage.features');
-    }
-    public function contact()
-    {
-        return view('landingpage.contact');
-    }
-    public function galery()
-    {
-        return view('landingpage.galery');
+        // Mengambil seluruh data pembeli dan pedagang dari masing-masing tabel
+        $pembelis = Pembeli::all();
+        $pedagangs = Pedagang::all();
+
+        // Melewatkan data pembeli dan pedagang ke view
+        return view('landingpage.home', compact('pembelis', 'pedagangs'));
     }
 }

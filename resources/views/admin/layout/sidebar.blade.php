@@ -59,22 +59,18 @@
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-app text-info text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Admin</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('Pendapatan') ? 'active' : '' }}"
-                    href="{{ route('Pendapatan') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Pendapatan</span>
+                    <span class="nav-link-text ms-1">Operator</span>
                 </a>
             </li>
         </ul>
     </div>
     <div class="sidenav-footer mx-3 mt-10">
-        <a class="btn btn-primary btn-sm mb-0 w-100" href="" type="button">Keluar</a>
+        <form id="logout-form-footer" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        <button class="btn btn-primary btn-sm mb-0 w-100" onclick="showLogoutConfirmation();" type="button">
+            Keluar
+        </button>
     </div>
+
 </aside>

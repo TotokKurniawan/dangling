@@ -12,10 +12,16 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Nama</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            kategori Jual</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama
+                                        </th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Alamat</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Telepon</th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Status</th>
@@ -23,38 +29,76 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3"
-                                                        alt="user1">
+                                    @foreach ($pedagangs as $index => $pedagang)
+                                        <tr>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $index + 1 }}</p>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3"
+                                                            alt="{{ $pedagang->nama }}">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{ $pedagang->nama }}</h6>
+                                                    </div>
                                                 </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">John Michael</h6>
-                                                    <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                            <p class="text-xs text-secondary mb-0">Organization</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="badge badge-sm bg-gradient-success">Online</span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <!-- Hapus Button -->
-                                            <label class="switch">
-                                                <input type="checkbox" onclick="confirmDelete(this)">
-                                                <span class="slider round"></span>
-                                            </label>
-
-
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $pedagang->alamat }}</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $pedagang->telfon }}</p>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span
+                                                    class="badge badge-sm {{ $pedagang->status === 'online' ? 'bg-gradient-success' : ($pedagang->status === 'offline' ? 'bg-gradient-danger' : 'bg-gradient-secondary') }}">
+                                                    {{ $pedagang->status ?? 'N/A' }}
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <!-- Hapus Button -->
+                                                <form action="{{ route('update.status') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="id" value="{{ $pedagang->id }}">
+                                                    <label class="switch">
+                                                        <input type="checkbox" name="status" value="offline"
+                                                            onchange="this.form.submit()"
+                                                            {{ $pedagang->status == 'offline' ? 'checked' : '' }}>
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-center mt-4 text-black">
+                                <ul class="pagination">
+                                    {{-- Previous Page Link --}}
+                                    <li class="page-item {{ $pedagangs->onFirstPage() ? 'disabled' : '' }}">
+                                        <a class="page-link" href="{{ $pedagangs->previousPageUrl() }}"
+                                            aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+
+                                    {{-- Pagination Elements --}}
+                                    @foreach ($pedagangs->links()->elements[0] as $page => $url)
+                                        <li class="page-item {{ $page == $pedagangs->currentPage() ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                        </li>
+                                    @endforeach
+
+                                    {{-- Next Page Link --}}
+                                    <li class="page-item {{ $pedagangs->hasMorePages() ? '' : 'disabled' }}">
+                                        <a class="page-link" href="{{ $pedagangs->nextPageUrl() }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

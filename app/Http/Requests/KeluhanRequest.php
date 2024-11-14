@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MitraRequest extends FormRequest
+class KeluhanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -19,11 +19,14 @@ class MitraRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'nama' => 'required|string|max:255',
-            'perusahaan' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'rating' => 'required|integer|min:1|max:5',
+            'nama' => 'required|exists:pembelis,id',
+            'pedagang' => 'required|exists:pedagangs,id',
         ];
     }
+
 }

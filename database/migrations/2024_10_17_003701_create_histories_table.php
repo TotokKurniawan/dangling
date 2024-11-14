@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('keluhans', function (Blueprint $table) {
+        Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->string('deskripsi');
-            $table->integer('rating');
+            $table->enum('status',['Menunggu','Diterima','Ditolak']);
+            $table->string('bentuk_pembayaran'); // Menggunakan string() untuk varchar
+            $table->point('koordinat_pembeli');
+            $table->point('koordinat_pedagang');
             $table->unsignedBigInteger('id_pembeli'); // Ganti spasi dengan underscore
             $table->unsignedBigInteger('id_pedagang'); // Ganti spasi dengan underscore
             $table->timestamps();
@@ -30,12 +32,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('keluhans', function (Blueprint $table) {
+        Schema::table('histories', function (Blueprint $table) {
             // Menghapus foreign key constraints sebelum menghapus tabel
             $table->dropForeign(['id_pembeli']);
             $table->dropForeign(['id_pedagang']);
         });
 
-        Schema::dropIfExists('keluhans');
+        Schema::dropIfExists('histories'); // Tidak perlu `table:` di sini
     }
 };
